@@ -1,0 +1,705 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="角料文档">
+      
+      
+      
+        <meta name="author" content="Nosy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+    
+    
+      
+        <title>自定义主题 - 角料文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.78aab2dc.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="角料文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                角料文档
+              </span>
+              <span class="md-header-nav__topic">
+                自定义主题
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wohugb/material-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/material-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="概述" class="md-tabs__link md-tabs__link--active">
+        概述
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    角料文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wohugb/material-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/material-docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="入门" class="md-nav__link">
+      入门
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../theming/" title="主题" class="md-nav__link">
+      主题
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        自定义主题
+      </label>
+    
+    <a href="./" title="自定义主题" class="md-nav__link md-nav__link--active">
+      自定义主题
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mixin" title="使用@mixin自动应用主题" class="md-nav__link">
+    使用@mixin自动应用主题
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mixin_1" title="为什么使用@mixin" class="md-nav__link">
+    为什么使用@mixin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-mixin" title="How to use @mixin" class="md-nav__link">
+    How to use @mixin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixin_2" title="使用@mixin的最佳实践" class="md-nav__link">
+    使用@mixin的最佳实践
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="使用调色板中的颜色" class="md-nav__link">
+    使用调色板中的颜色
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../typography/" title="排版" class="md-nav__link">
+      排版
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../customizing-component-styles/" title="自定义组件样式" class="md-nav__link">
+      自定义组件样式
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../creating-a-custom-form-field-control/" title="自定义表单域控制" class="md-nav__link">
+      自定义表单域控制
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../elevation/" title="海拔" class="md-nav__link">
+      海拔
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bidirectionality/" title="双向性" class="md-nav__link">
+      双向性
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mixin" title="使用@mixin自动应用主题" class="md-nav__link">
+    使用@mixin自动应用主题
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mixin_1" title="为什么使用@mixin" class="md-nav__link">
+    为什么使用@mixin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-mixin" title="How to use @mixin" class="md-nav__link">
+    How to use @mixin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixin_2" title="使用@mixin的最佳实践" class="md-nav__link">
+    使用@mixin的最佳实践
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="使用调色板中的颜色" class="md-nav__link">
+    使用调色板中的颜色
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">主题化您的自定义组件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>为了使用Angular Material的工具设计自己的组件，组件的样式必须使用Sass来定义。</p>
+<h2 id="mixin">使用<code>@mixin</code>自动应用主题<a class="headerlink" href="#mixin" title="Permanent link">&para;</a></h2>
+<h3 id="mixin_1">为什么使用<code>@mixin</code><a class="headerlink" href="#mixin_1" title="Permanent link">&para;</a></h3>
+<p>使用<code>@mixin</code>函数的好处是，当你改变你的主题时，每个使用它的文件都会自动更新。
+使用不同的主题参数调用<code>@mixin</code>可以在应用程序或组件中使用多个主题。</p>
+<h3 id="how-to-use-mixin">How to use <code>@mixin</code><a class="headerlink" href="#how-to-use-mixin" title="Permanent link">&para;</a></h3>
+<p>我们可以通过在其主题文件中添加一个<code>@mixin</code>函数来更好地为我们的自定义组件添加主题，然后调用此函数来应用主题。</p>
+<p>所有你需要的是在custom-component-theme.scss中创建一个<code>@mixin</code>函数</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 导入自定义主题并提取部分内容所需的所有工具</span>
+<span class="k">@import</span> <span class="s1">&#39;</span><span class="s2">~@angular/material/theming&#39;</span><span class="p">;</span>
+
+<span class="c1">// 定义一个接受主题并输出组件颜色样式的mixin。</span>
+<span class="k">@mixin</span><span class="nf"> candy-carousel-theme</span><span class="p">(</span><span class="nv">$theme</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 定义一个接受主题并输出组件颜色样式的mixin。</span>
+  <span class="nv">$primary</span><span class="o">:</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$theme</span><span class="o">,</span> <span class="n">primary</span><span class="p">);</span>
+  <span class="nv">$accent</span><span class="o">:</span> <span class="nf">map-get</span><span class="p">(</span><span class="nv">$theme</span><span class="o">,</span> <span class="n">accent</span><span class="p">);</span>
+
+  <span class="c1">// 定义一个接受主题并输出组件颜色样式的mixin。</span>
+  <span class="nc">.candy-carousel</span> <span class="p">{</span>
+    <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">mat-color</span><span class="o">(</span><span class="err">$</span><span class="nt">primary</span><span class="o">);</span>
+    <span class="nt">border-color</span><span class="nd">:</span> <span class="nt">mat-color</span><span class="o">(</span><span class="err">$</span><span class="nt">accent</span><span class="o">,</span> <span class="nt">A400</span><span class="o">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>现在你只需调用<code>@mixin</code>函数来应用主题：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 导入预先构建的主题</span>
+<span class="k">@import</span> <span class="s1">&#39;</span><span class="s2">~@angular/material/prebuilt-themes/deeppurple-amber.css&#39;</span><span class="p">;</span>
+<span class="c1">// 导入您的自定义输入主题文件，以便您可以调用自定义输入主题功能</span>
+<span class="k">@import</span> <span class="s1">&#39;</span><span class="s2">app/candy-carousel/candy-carousel-theme.scss&#39;</span><span class="p">;</span>
+<span class="c1">// 使用预构建主题中的$theme变量可以调用主题函数</span>
+<span class="k">@include</span><span class="nd"> candy-carousel-theme</span><span class="p">(</span><span class="nv">$theme</span><span class="p">);</span>
+</pre></div>
+
+<p>有关主题功能的更多详细信息，请参阅<a href="https://github.com/angular/material2/blob/master/src/lib/core/theming/_theming.scss">源代码中的注释</a>.</p>
+<h3 id="mixin_2">使用<code>@mixin</code>的最佳实践<a class="headerlink" href="#mixin_2" title="Permanent link">&para;</a></h3>
+<p>当使用<code>@mixin</code>时，主题文件应该只包含受传入主题影响的定义。</p>
+<p>所有不受主题影响的样式应放置在<code>candy-carousel.scss</code>文件中。
+这个文件应该包含所有不受大小，转换等主题影响的内容......</p>
+<p>受该主题影响的样式应放置在一个单独的主题文件中，名称为_candy-carousel-theme.scss，该文件的名称前应该有一个<code>_</code>。
+这个文件应该包含负责将主题应用到组件的<code>@mixin</code>函数。</p>
+<h2 id="_2">使用调色板中的颜色<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>您可以使用<code>@angular/material/theming</code>中的主题函数和材料选项板变量。
+您可以使用<code>mat-color</code>功能从调色板中提取特定的颜色。 例如：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// 导入主题功能</span>
+<span class="k">@import</span> <span class="s1">&#39;</span><span class="s2">~@angular/material/theming&#39;</span><span class="p">;</span>
+<span class="c1">// 导入您的自定义它们</span>
+<span class="k">@import</span> <span class="s1">&#39;</span><span class="s2">src/unicorn-app-theme.scss&#39;</span><span class="p">;</span>
+
+<span class="c1">// 根据需要使用垫颜色从调色板中提取单个颜色。</span>
+<span class="c1">// 色调可以是标准值之一（500，A400等）， 三种预先配置的色调之一（默认，较轻，较暗）， 或前面提到的任何前缀`-contrast`。</span>
+<span class="c1">// 例如，`较暗对比`色调给出浅色以与`较暗`色相对比。</span>
+<span class="c1">// 请注意，使用带`-contrast`修饰符的数字色调时需要使用引号。</span>
+<span class="c1">// 可用的调色板： https://www.google.com/design/spec/style/color.html</span>
+<span class="nc">.candy-carousel</span> <span class="p">{</span>
+  <span class="nt">background-color</span><span class="nd">:</span> <span class="nt">mat-color</span><span class="o">(</span><span class="err">$</span><span class="nt">candy-app-primary</span><span class="o">);</span>
+  <span class="nt">border-color</span><span class="nd">:</span> <span class="nt">mat-color</span><span class="o">(</span><span class="err">$</span><span class="nt">candy-app-accent</span><span class="o">,</span> <span class="nt">A400</span><span class="o">);</span>
+  <span class="nt">color</span><span class="nd">:</span> <span class="nt">mat-color</span><span class="o">(</span><span class="err">$</span><span class="nt">candy-app-primary</span><span class="o">,</span> <span class="s1">&#39;</span><span class="s2">100-contrast&#39;</span><span class="o">);</span>
+<span class="p">}</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../theming/" title="主题" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                主题
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../typography/" title="排版" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                排版
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            版权 &copy; 2018 wohugb.github.io
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.8eb9be28.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1107 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="角料文档">
+      
+      
+      
+        <meta name="author" content="Nosy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+    
+    
+      
+        <title>自定义表单域控制 - 角料文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.78aab2dc.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="角料文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                角料文档
+              </span>
+              <span class="md-header-nav__topic">
+                自定义表单域控制
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wohugb/material-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/material-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="概述" class="md-tabs__link md-tabs__link--active">
+        概述
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    角料文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wohugb/material-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/material-docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="入门" class="md-nav__link">
+      入门
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../theming/" title="主题" class="md-nav__link">
+      主题
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../theming-your-components/" title="自定义主题" class="md-nav__link">
+      自定义主题
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../typography/" title="排版" class="md-nav__link">
+      排版
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../customizing-component-styles/" title="自定义组件样式" class="md-nav__link">
+      自定义组件样式
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        自定义表单域控制
+      </label>
+    
+    <a href="./" title="自定义表单域控制" class="md-nav__link md-nav__link--active">
+      自定义表单域控制
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#matformfieldcontrol" title="提供我们的组件作为MatFormFieldControl" class="md-nav__link">
+    提供我们的组件作为MatFormFieldControl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matformfieldcontrol_1" title="实现MatFormFieldControl的方法和属性" class="md-nav__link">
+    实现MatFormFieldControl的方法和属性
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#value" title="value" class="md-nav__link">
+    value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statechanges" title="stateChanges" class="md-nav__link">
+    stateChanges
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" title="id" class="md-nav__link">
+    id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placeholder" title="placeholder" class="md-nav__link">
+    placeholder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ngcontrol" title="ngControl" class="md-nav__link">
+    ngControl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#focused" title="focused" class="md-nav__link">
+    focused
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty" title="empty" class="md-nav__link">
+    empty
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shouldlabelfloat" title="shouldLabelFloat" class="md-nav__link">
+    shouldLabelFloat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" title="required" class="md-nav__link">
+    required
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabled" title="disabled" class="md-nav__link">
+    disabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errorstate" title="errorState" class="md-nav__link">
+    errorState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controltype" title="controlType" class="md-nav__link">
+    controlType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdescribedbyidsids-string" title="setDescribedByIds(ids: string[])" class="md-nav__link">
+    setDescribedByIds(ids: string[])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oncontainerclickevent-mouseevent" title="onContainerClick(event: MouseEvent)" class="md-nav__link">
+    onContainerClick(event: MouseEvent)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="试试吧" class="md-nav__link">
+    试试吧
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../elevation/" title="海拔" class="md-nav__link">
+      海拔
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../bidirectionality/" title="双向性" class="md-nav__link">
+      双向性
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#matformfieldcontrol" title="提供我们的组件作为MatFormFieldControl" class="md-nav__link">
+    提供我们的组件作为MatFormFieldControl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matformfieldcontrol_1" title="实现MatFormFieldControl的方法和属性" class="md-nav__link">
+    实现MatFormFieldControl的方法和属性
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#value" title="value" class="md-nav__link">
+    value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statechanges" title="stateChanges" class="md-nav__link">
+    stateChanges
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" title="id" class="md-nav__link">
+    id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placeholder" title="placeholder" class="md-nav__link">
+    placeholder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ngcontrol" title="ngControl" class="md-nav__link">
+    ngControl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#focused" title="focused" class="md-nav__link">
+    focused
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty" title="empty" class="md-nav__link">
+    empty
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shouldlabelfloat" title="shouldLabelFloat" class="md-nav__link">
+    shouldLabelFloat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required" title="required" class="md-nav__link">
+    required
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabled" title="disabled" class="md-nav__link">
+    disabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errorstate" title="errorState" class="md-nav__link">
+    errorState
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controltype" title="controlType" class="md-nav__link">
+    controlType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdescribedbyidsids-string" title="setDescribedByIds(ids: string[])" class="md-nav__link">
+    setDescribedByIds(ids: string[])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oncontainerclickevent-mouseevent" title="onContainerClick(event: MouseEvent)" class="md-nav__link">
+    onContainerClick(event: MouseEvent)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="试试吧" class="md-nav__link">
+    试试吧
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">创建一个自定义表单字段控件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>可以创建可以在<code>&lt;mat-form-field&gt;</code>内使用的自定义表单域控件。
+如果您需要创建一个与表单字段共享许多常见行为的组件，但是会添加一些额外的逻辑，这会非常有用。</p>
+<p>例如，在本指南中，我们将学习如何创建用于输入美国电话号码的自定义输入，并将其与<code>&lt;mat-form-field&gt;</code>结合使用。
+以下是我们将在本指南结束时构建的内容：</p>
+<!-- example(form-field-custom-control) -->
+
+<p>为了学习如何构建自定义表单字段控件，让我们从我们希望在表单字段中工作的简单输入组件开始。
+例如，一个电话号码输入，将数字的各个部分分割成自己的输入。
+(注意：这不是一个强大的组件，只是我们学习的起点。)</p>
+<div class="codehilite"><pre><span></span><span class="kr">class</span> <span class="nx">MyTel</span> <span class="p">{</span>
+  <span class="kr">constructor</span><span class="p">(</span><span class="kr">public</span> <span class="nx">area</span>: <span class="kt">string</span><span class="p">,</span> <span class="kr">public</span> <span class="nx">exchange</span>: <span class="kt">string</span><span class="p">,</span> <span class="kr">public</span> <span class="nx">subscriber</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="kd">@Component</span><span class="p">({</span>
+  <span class="nx">selector</span><span class="o">:</span> <span class="s1">&#39;my-tel-input&#39;</span><span class="p">,</span>
+  <span class="nx">template</span><span class="o">:</span> <span class="sb">`</span>
+<span class="sb">    &lt;div [formGroup]=&quot;parts&quot;&gt;</span>
+<span class="sb">      &lt;input class=&quot;area&quot; formControlName=&quot;area&quot; size=&quot;3&quot;&gt;</span>
+<span class="sb">      &lt;span&gt;&amp;ndash;&lt;/span&gt;</span>
+<span class="sb">      &lt;input class=&quot;exchange&quot; formControlName=&quot;exchange&quot; size=&quot;3&quot;&gt;</span>
+<span class="sb">      &lt;span&gt;&amp;ndash;&lt;/span&gt;</span>
+<span class="sb">      &lt;input class=&quot;subscriber&quot; formControlName=&quot;subscriber&quot; size=&quot;4&quot;&gt;</span>
+<span class="sb">    &lt;/div&gt;</span>
+<span class="sb">  `</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="o">:</span> <span class="p">[</span><span class="sb">`</span>
+<span class="sb">    div {</span>
+<span class="sb">      display: flex;</span>
+<span class="sb">    }</span>
+<span class="sb">    input {</span>
+<span class="sb">      border: none;</span>
+<span class="sb">      background: none;</span>
+<span class="sb">      padding: 0;</span>
+<span class="sb">      outline: none;</span>
+<span class="sb">      font: inherit;</span>
+<span class="sb">      text-align: center;</span>
+<span class="sb">    }</span>
+<span class="sb">  `</span><span class="p">],</span>
+<span class="p">})</span>
+<span class="kr">class</span> <span class="nx">MyTelInput</span> <span class="p">{</span>
+  <span class="nx">parts</span>: <span class="kt">FormGroup</span><span class="p">;</span>
+
+  <span class="kd">@Input</span><span class="p">()</span>
+  <span class="nx">get</span> <span class="nx">value</span><span class="p">()</span><span class="o">:</span> <span class="nx">MyTel</span> <span class="o">|</span> <span class="kc">null</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">parts</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">area</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">exchange</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">subscriber</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="nx">MyTel</span><span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">area</span><span class="p">,</span> <span class="nx">n</span><span class="p">.</span><span class="nx">exchange</span><span class="p">,</span> <span class="nx">n</span><span class="p">.</span><span class="nx">subscriber</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">set</span> <span class="nx">value</span><span class="p">(</span><span class="nx">tel</span>: <span class="kt">MyTel</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">tel</span> <span class="o">=</span> <span class="nx">tel</span> <span class="o">||</span> <span class="k">new</span> <span class="nx">MyTel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">parts</span><span class="p">.</span><span class="nx">setValue</span><span class="p">({</span><span class="nx">area</span>: <span class="kt">tel.area</span><span class="p">,</span> <span class="nx">exchange</span>: <span class="kt">tel.exchange</span><span class="p">,</span> <span class="nx">subscriber</span>: <span class="kt">tel.subscriber</span><span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="kr">constructor</span><span class="p">(</span><span class="nx">fb</span>: <span class="kt">FormBuilder</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">parts</span> <span class="o">=</span>  <span class="nx">fb</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
+      <span class="s1">&#39;area&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;exchange&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;subscriber&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="matformfieldcontrol">提供我们的组件作为MatFormFieldControl<a class="headerlink" href="#matformfieldcontrol" title="Permanent link">&para;</a></h2>
+<p>第一步是提供我们的新组件作为<code>MatFormFieldControl</code>接口的实现，<code>&lt;mat-form-field&gt;</code>知道如何使用。
+为此，我们将让我们的类实现<code>MatFormFieldControl</code>。
+由于这是一个通用接口，因此我们需要包含一个类型参数，用于指示我们的控件将使用的数据类型，在本例中为<code>MyTel</code>。
+然后，我们在组件中添加一个提供程序，以便表单字段能够将其注入为<code>MatFormFieldControl</code>。</p>
+<div class="codehilite"><pre><span></span><span class="kd">@Component</span><span class="p">({</span>
+  <span class="p">...</span>
+  <span class="nx">providers</span><span class="o">:</span> <span class="p">[{</span><span class="nx">provide</span>: <span class="kt">MatFormFieldControl</span><span class="p">,</span> <span class="nx">useExisting</span>: <span class="kt">MyTelInput</span><span class="p">}],</span>
+<span class="p">})</span>
+<span class="kr">class</span> <span class="nx">MyTelInput</span> <span class="kr">implements</span> <span class="nx">MatFormFieldControl</span><span class="o">&lt;</span><span class="nx">MyTel</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>这设置了我们的组件，因此它可以使用<code>&lt;mat-form-field&gt;</code>，但现在我们需要实现我们刚刚实现的接口所声明的各种方法和属性。
+要了解更多关于MatFormFieldControl接口的信息，请参阅表单字段<a href="https://material.angular.io/components/form-field/api">API文档</a>.</p>
+<h2 id="matformfieldcontrol_1">实现MatFormFieldControl的方法和属性<a class="headerlink" href="#matformfieldcontrol_1" title="Permanent link">&para;</a></h2>
+<h3 id="value"><code>value</code><a class="headerlink" href="#value" title="Permanent link">&para;</a></h3>
+<p>该属性允许某人设置或获取我们控制的价值。
+当我们实现<code>MatFormFieldControl</code>时，它的类型应该与我们用于类型参数的类型相同。
+由于我们的组件已经有一个值属性，所以我们不需要为这个做任何事情。</p>
+<h3 id="statechanges"><code>stateChanges</code><a class="headerlink" href="#statechanges" title="Permanent link">&para;</a></h3>
+<p>因为<code>&lt;mat-form-field&gt;</code>使用<code>OnPush</code>变化检测策略，
+我们需要让它知道什么时候在表单字段控件中发生什么事情，这可能需要表单域来运行更改检测。
+我们通过<code>stateChanges</code>属性来做到这一点。
+到目前为止，表单字段唯一需要了解的是值的变化。
+当发生这种情况时，我们需要发出stateChanges流，并且当我们继续清除这些属性时，我们可能会发现更多需要发出的地方。
+当我们的组件被销毁时，我们也应该确保完成<code>stateChanges</code>。</p>
+<div class="codehilite"><pre><span></span><span class="nx">stateChanges</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Subject</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="nx">set</span> <span class="nx">value</span><span class="p">(</span><span class="nx">tel</span>: <span class="kt">MyTel</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">stateChanges</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">ngOnDestroy() {</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">stateChanges</span><span class="p">.</span><span class="nx">complete</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="id"><code>id</code><a class="headerlink" href="#id" title="Permanent link">&para;</a></h3>
+<p>该属性应该返回组件模板中的一个元素的ID，我们希望<code>&lt;mat-form-field&gt;</code>将它的所有标签和提示关联起来。
+在这种情况下，我们将使用主机元素并为其生成一个唯一的ID。</p>
+<div class="codehilite"><pre><span></span><span class="kr">static</span> <span class="nx">nextId</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kd">@HostBinding</span><span class="p">()</span> <span class="nx">id</span> <span class="o">=</span> <span class="sb">`my-tel-input-</span><span class="si">${</span><span class="nx">MyTelInput</span><span class="p">.</span><span class="nx">nextId</span><span class="o">++</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</pre></div>
+
+<h3 id="placeholder"><code>placeholder</code><a class="headerlink" href="#placeholder" title="Permanent link">&para;</a></h3>
+<p>这个属性允许我们告诉<code>&lt;mat-form-field&gt;</code>用作占位符。
+在这个例子中，我们将做<code>matInput</code>和<code>&lt;mat-select&gt;</code>，并允许用户通过<code>@Input（）</code>指定它。
+由于占位符的值可能会随着时间而改变，因此我们需要确保在占位符更改时通过在<code>stateChanges</code>流上发出来在父窗体字段中触发更改检测。</p>
+<div class="codehilite"><pre><span></span><span class="kd">@Input</span><span class="p">()</span>
+<span class="nx">get</span> <span class="nx">placeholder() {</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_placeholder</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">set</span> <span class="nx">placeholder</span><span class="p">(</span><span class="nx">plh</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">_placeholder</span> <span class="o">=</span> <span class="nx">plh</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">stateChanges</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kr">private</span> <span class="nx">_placeholder</span>: <span class="kt">string</span><span class="p">;</span>
+</pre></div>
+
+<h3 id="ngcontrol"><code>ngControl</code><a class="headerlink" href="#ngcontrol" title="Permanent link">&para;</a></h3>
+<p>该属性允许表单字段控件指定绑定到此组件的<code>@ angular / forms</code>控件。
+由于我们没有将组件设置为<code>ControlValueAccessor</code>，因此我们只会在组件中将其设置为<code>null</code>。</p>
+<div class="codehilite"><pre><span></span><span class="nx">ngControl</span>: <span class="kt">NgControl</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</pre></div>
+
+<p>很可能你会想要实现<code>ControlValueAccessor</code>，这样你的组件就可以使用<code>formControl</code>和<code>ngModel</code>。
+如果你实现了<code>ControlValueAccessor</code>，你将需要获得一个对你的控件关联的<code>NgControl</code>的引用，并将其公开。</p>
+<p>简单的方法是将它作为公共属性添加到您的构造函数中，并让依赖注入来处理它：</p>
+<div class="codehilite"><pre><span></span><span class="kr">constructor</span><span class="p">(</span>
+  <span class="p">...,</span>
+  <span class="kd">@Optional</span><span class="p">()</span> <span class="kd">@Self</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">ngControl</span>: <span class="kt">NgControl</span><span class="p">,</span>
+  <span class="p">...,</span>
+<span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</pre></div>
+
+<p>请注意，如果你的组件实现了<code>ControlValueAccessor</code>，它可能已经被设置为提供<code>NG_VALUE_ACCESSOR</code>（在组件的装饰器的<code>providers</code>部分，或者可能在模块声明中）。
+如果是这样，你可能会得到一个无法实例化循环依赖性错误。</p>
+<p>要解决这个问题，请移除<code>NG_VALUE_ACCESSOR</code>提供者，直接设置值访问器：</p>
+<div class="codehilite"><pre><span></span><span class="kr">constructor</span><span class="p">(</span>
+  <span class="p">...,</span>
+  <span class="kd">@Optional</span><span class="p">()</span> <span class="kd">@Self</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">ngControl</span>: <span class="kt">NgControl</span><span class="p">,</span>
+  <span class="p">...,</span>
+<span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Setting the value accessor directly (instead of using</span>
+  <span class="c1">// the providers) to avoid running into a circular import.</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">ngControl</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">ngControl</span><span class="p">.</span><span class="nx">valueAccessor</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>有关<code>ControlValueAccessor</code>的更多信息，请参阅<a href="https://angular.io/api/forms/ControlValueAccessor">API文档</a>.</p>
+<h3 id="focused"><code>focused</code><a class="headerlink" href="#focused" title="Permanent link">&para;</a></h3>
+<p>此属性指示是否应将表单字段控件视为处于聚焦状态。
+当它处于聚焦状态时，表单域将以纯色下划线显示。
+对于我们的组件而言，如果任何部分输入都集中在一起，我们想要考虑它的重点。
+我们可以使用<code>@ angular / cdk</code>中的FocusMonitor来轻松检查。
+我们还需要记住发出<code>stateChanges</code>流，以便发生变化检测。</p>
+<div class="codehilite"><pre><span></span><span class="nx">focused</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="kr">constructor</span><span class="p">(</span><span class="nx">fb</span>: <span class="kt">FormBuilder</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">fm</span>: <span class="kt">FocusMonitor</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">elRef</span>: <span class="kt">ElementRef</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">...</span>
+  <span class="nx">fm</span><span class="p">.</span><span class="nx">monitor</span><span class="p">(</span><span class="nx">elRef</span><span class="p">.</span><span class="nx">nativeElement</span><span class="p">,</span> <span class="kc">true</span><span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">origin</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">focused</span> <span class="o">=</span> <span class="o">!!</span><span class="nx">origin</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">stateChanges</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nx">ngOnDestroy() {</span>
+  <span class="p">...</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">fm</span><span class="p">.</span><span class="nx">stopMonitoring</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">elRef</span><span class="p">.</span><span class="nx">nativeElement</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="empty"><code>empty</code><a class="headerlink" href="#empty" title="Permanent link">&para;</a></h3>
+<p>该属性指示表单字段控件是否为空。
+对于我们的控制，如果所有零件都是空的，我们会认为它是空的。</p>
+<div class="codehilite"><pre><span></span><span class="nx">get</span> <span class="nx">empty() {</span>
+  <span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">parts</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="k">return</span> <span class="o">!</span><span class="nx">n</span><span class="p">.</span><span class="nx">area</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">n</span><span class="p">.</span><span class="nx">exchange</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">n</span><span class="p">.</span><span class="nx">subscriber</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="shouldlabelfloat"><code>shouldLabelFloat</code><a class="headerlink" href="#shouldlabelfloat" title="Permanent link">&para;</a></h3>
+<p>该属性用于指示标签是否应处于浮动位置。
+我们将使用与matInput相同的逻辑，并在输入为焦点或非空时悬浮占位符。
+由于占位符在不处于浮动状态时将与我们的控件重叠，所以当它不是浮动时，我们应该隐藏<code>-</code>字符。</p>
+<div class="codehilite"><pre><span></span><span class="kd">@HostBinding</span><span class="p">(</span><span class="s1">&#39;class.floating&#39;</span><span class="p">)</span>
+<span class="nx">get</span> <span class="nx">shouldLabelFloat() {</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">focused</span> <span class="o">||</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">empty</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="nt">span</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">transition</span><span class="p">:</span> <span class="k">opacity</span> <span class="mi">200</span><span class="kt">ms</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">:</span><span class="nd">host</span><span class="p">.</span><span class="nc">floating</span> <span class="nt">span</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="required"><code>required</code><a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
+<p>该属性用于指示是否需要输入。
+<code>&lt;mat-form-field&gt;</code>使用此信息向占位符添加所需的指示符。
+同样，如果所需的状态发生变化，我们将确保运行变更检测。</p>
+<div class="codehilite"><pre><span></span><span class="kd">@Input</span><span class="p">()</span>
+<span class="nx">get</span> <span class="nx">required() {</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_required</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">set</span> <span class="nx">required</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">_required</span> <span class="o">=</span> <span class="nx">coerceBooleanProperty</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">stateChanges</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kr">private</span> <span class="nx">_required</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
+
+<h3 id="disabled"><code>disabled</code><a class="headerlink" href="#disabled" title="Permanent link">&para;</a></h3>
+<p>同样，如果所需的状态发生变化，我们将确保运行变更检测。
+除了向表单字段报告正确的状态外，我们还需要在构成组件的各个输入上设置禁用状态。</p>
+<div class="codehilite"><pre><span></span><span class="kd">@Input</span><span class="p">()</span>
+<span class="nx">get</span> <span class="nx">disabled() {</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_disabled</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">set</span> <span class="nx">disabled</span><span class="p">(</span><span class="nx">dis</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">_disabled</span> <span class="o">=</span> <span class="nx">coerceBooleanProperty</span><span class="p">(</span><span class="nx">dis</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">stateChanges</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kr">private</span> <span class="nx">_disabled</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;area&quot;</span> <span class="na">formControlName</span><span class="o">=</span><span class="s">&quot;area&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="err">[</span><span class="na">disabled</span><span class="err">]=&quot;</span><span class="na">disabled</span><span class="err">&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="ni">&amp;ndash;</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;exchange&quot;</span> <span class="na">formControlName</span><span class="o">=</span><span class="s">&quot;exchange&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="err">[</span><span class="na">disabled</span><span class="err">]=&quot;</span><span class="na">disabled</span><span class="err">&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="ni">&amp;ndash;</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;subscriber&quot;</span> <span class="na">formControlName</span><span class="o">=</span><span class="s">&quot;subscriber&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;4&quot;</span> <span class="err">[</span><span class="na">disabled</span><span class="err">]=&quot;</span><span class="na">disabled</span><span class="err">&quot;</span><span class="p">&gt;</span>
+</pre></div>
+
+<h3 id="errorstate"><code>errorState</code><a class="headerlink" href="#errorstate" title="Permanent link">&para;</a></h3>
+<p>该属性指示相关的<code>NgControl</code>是否处于错误状态。
+由于在这个例子中我们没有使用<code>NgControl</code>，所以除了将其设置为<code>false</code>之外，我们不需要做任何事情。</p>
+<div class="codehilite"><pre><span></span><span class="nx">errorState</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
+
+<h3 id="controltype"><code>controlType</code><a class="headerlink" href="#controltype" title="Permanent link">&para;</a></h3>
+<p>该属性允许我们为表单字段中的控件类型指定一个唯一的字符串。
+<code>&lt;mat-form-field&gt;</code>会根据这个类型添加一个额外的类，这个类可以很容易地将特殊的样式应用到包含特定类型控件的<code>&lt;mat-form-field&gt;</code>中。
+在这个例子中，我们将使用<code>my-tel-input</code>作为我们的控制类型，这将导致表单字段添加<code>mat-form-field-my-tel-input</code>类。</p>
+<div class="codehilite"><pre><span></span><span class="nx">controlType</span> <span class="o">=</span> <span class="s1">&#39;my-tel-input&#39;</span><span class="p">;</span>
+</pre></div>
+
+<h3 id="setdescribedbyidsids-string"><code>setDescribedByIds(ids: string[])</code><a class="headerlink" href="#setdescribedbyidsids-string" title="Permanent link">&para;</a></h3>
+<p><code>&lt;mat-form-field&gt;</code>使用该方法来指定应该用于组件的<code>aria-describedby</code>属性的ID。
+该方法有一个参数，ID列表，我们只需要将给定的ID应用到我们的主机元素。</p>
+<div class="codehilite"><pre><span></span><span class="kd">@HostBinding</span><span class="p">(</span><span class="s1">&#39;attr.aria-describedby&#39;</span><span class="p">)</span> <span class="nx">describedBy</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+
+<span class="nx">setDescribedByIds</span><span class="p">(</span><span class="nx">ids</span>: <span class="kt">string</span><span class="p">[])</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">describedBy</span> <span class="o">=</span> <span class="nx">ids</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="oncontainerclickevent-mouseevent"><code>onContainerClick(event: MouseEvent)</code><a class="headerlink" href="#oncontainerclickevent-mouseevent" title="Permanent link">&para;</a></h3>
+<p>该方法将在单击表单域时调用。
+它允许你的组件钩入并处理它的点击，但它想要的。
+该方法有一个参数，点击的<code>MouseEvent</code>。
+在我们的例子中，如果用户不想单击一个<code>&lt;input&gt;</code>，那么我们只关注第一个<code>&lt;input&gt;</code>。</p>
+<div class="codehilite"><pre><span></span><span class="nx">onContainerClick</span><span class="p">(</span><span class="nx">event</span>: <span class="kt">MouseEvent</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">((</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span> <span class="kr">as</span> <span class="nx">Element</span><span class="p">).</span><span class="nx">tagName</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;input&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">elRef</span><span class="p">.</span><span class="nx">nativeElement</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="_2">试试吧<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>现在我们已经完全实现了界面，我们已经准备好尝试我们的组件了！
+我们所需要做的就是将它放在一个<code>&lt;mat-form-field&gt;</code>中</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">mat-form-field</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">my-tel-input</span><span class="p">&gt;&lt;/</span><span class="nt">my-tel-input</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">mat-form-field</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>我们还获得了所有带有<code>&lt;mat-form-field&gt;</code>的特性，例如浮动占位符，前缀，后缀，提示和错误 (如果我们给了表单字段一个<code>NgControl</code>并且正确地报告错误状态).</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">mat-form-field</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">my-tel-input</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Phone number&quot;</span> <span class="na">required</span><span class="p">&gt;&lt;/</span><span class="nt">my-tel-input</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mat-icon</span> <span class="na">matPrefix</span><span class="p">&gt;</span>电话<span class="p">&lt;/</span><span class="nt">mat-icon</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">mat-hint</span><span class="p">&gt;</span>包括区号<span class="p">&lt;/</span><span class="nt">mat-hint</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">mat-form-field</span><span class="p">&gt;</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../customizing-component-styles/" title="自定义组件样式" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                自定义组件样式
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../elevation/" title="海拔" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                海拔
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            版权 &copy; 2018 wohugb.github.io
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.8eb9be28.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
