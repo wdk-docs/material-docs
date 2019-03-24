@@ -18,7 +18,7 @@
 
 ## 使用预先构建的主题
 
-**角料**预装了几个预先构建的主题css文件。
+**角料**预装了几个预先构建的主题`css`文件。
 这些主题文件还包括核心的所有样式 (所有组件通用的样式), 所以你只需要在你的应用中包含一个用于**角料**的css文件.
 
 您可以从`@angular/material/prebuilt-themes`直接将主题文件包含到您的应用程序
@@ -62,28 +62,27 @@
 
 ```scss
 @import '~@angular/material/theming';
-// Plus imports for other components in your app.
+// 加上您应用中其他组件的导入。
 
-// Include the common styles for **角料**. We include this here so that you only
-// have to load a single css file for **角料** in your app.
-// Be sure that you only ever include this mixin once!
+// 包含**角料**的常见样式。 我们在这里包含这个，这样你只需要在你的应用中加载一个**角料**的css文件。
+// 确保你只包含这个mixin一次！
 @include mat-core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://www.google.com/design/spec/style/color.html
+// 使用`palette.scss`中提供的Material Design面板（上面导入）为主题定义调色板。
+// 对于每个调色板，您可以选择指定默认，较亮和较暗的色调。
+// 可用的调色板： https://www.google.com/design/spec/style/color.html
+
 $candy-app-primary: mat-palette($mat-indigo);
 $candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
 
-// The warn palette is optional (defaults to red).
+// 警告调色板是可选的（默认为红色）。
 $candy-app-warn:    mat-palette($mat-red);
 
-// Create the theme object (a Sass map containing all of the palettes).
+// 创建主题对象（包含所有调色板的Sass地图）。
 $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
+// 包括核心和应用程序中使用的每个组件的主题样式。
+// 或者，您可以为您正在使用的每个组件导入和@include主题混合。
 @include angular-material-theme($candy-app-theme);
 ```
 
@@ -210,7 +209,7 @@ $candy-app-theme:   mat-light-theme($candy-app-primary, $candy-app-accent);
 
 ## 主题化你自己的组件
 
-有关自己组件的更多细节, 请参阅[theming-your-components.md](./theming-your-components.md).
+有关自己组件的更多细节, 请参阅[主题化组件](./theming-your-components.md).
 
 ## 未来的工作
 

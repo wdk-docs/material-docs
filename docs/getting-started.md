@@ -1,12 +1,12 @@
 # 入门
 
-要获得新的Angular应用程序入门帮助，请查看[Angular CLI](https://cli.angular.io/).
+要获得新的Angular应用程序入门帮助，请查看[角令](https://cli.angular.io/).
 
-对于现有的应用程序，请按照以下步骤开始使用Angular Material。
+对于现有的应用程序，请按照以下步骤开始使用角料。
 
-## 第1步：安装Angular Material and Angular CDK
+## 第1步:安装角料和角CDK
 
-对于现有的应用程序，请按照以下步骤开始使用Angular Material。
+对于现有的应用程序，请按照以下步骤开始使用角料。
 在以下示例中使用适合您项目的内容。
 
 ### NPM
@@ -21,24 +21,24 @@ npm install --save @angular/material @angular/cdk
 yarn add @angular/material @angular/cdk
 ```
 
-### 替代方法：快照构建
+### 替代方法:快照构建
 
 快照版本还包含来自主服务器的最新更改。
 请注意，此快照构建不应被认为是稳定的，并且可能会在各个发行版之间中断
 
-### NPM - builds
+### NPM - 构建
 
 ```bash
 npm install --save angular/material2-builds angular/cdk-builds
 ```
 
-### Yarn - builds
+### Yarn - 构建
 
 ```bash
 yarn add angular/material2-builds angular/cdk-builds
 ```
 
-## 第2步：动画
+## 第2步:动画
 
 一些Material组件依赖于Angular动画模块，以便能够进行更高级的转换。
 如果你想让这些动画在你的应用中运行， 你必须安装`@angular/animations`模块并在你的应用中包含`BrowserAnimationsModule`。
@@ -84,7 +84,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 export class PizzaPartyAppModule { }
 ```
 
-## 第3步：导入组件模块
+## 第3步:导入组件模块
 
 为您想要使用的每个组件导入NgModule：
 
@@ -99,7 +99,7 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 export class PizzaPartyAppModule { }
 ```
 
-或者，您可以创建一个单独的NgModule，导入将在您的应用程序中使用的所有Angular Material组件。
+或者，您可以创建一个单独的NgModule，导入将在您的应用程序中使用的所有角料组件。
 然后，您可以在需要使用组件的任何地方包含此模块。
 
 ```ts
@@ -112,24 +112,24 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 export class MyOwnCustomMaterialModule { }
 ```
 
-无论使用哪种方法，请确保导入Angular Material模块_after_ Angular的BrowserModule，因为导入顺序对于NgModules很重要。
+无论使用哪种方法，请确保导入角料模块_after_ Angular的BrowserModule，因为导入顺序对于NgModules很重要。
 
-## 第4步：包含一个主题
+## 第4步:包含一个主题
 
 包含主题是将所有核心和主题样式应用到您的应用程序所必需的。
 
-要开始使用预构建的主题，请在您的应用程序中全局添加一个Angular Material的预建主题。
-如果您使用的是Angular CLI，可以将其添加到`styles.css`中：
+要开始使用预构建的主题，请在您的应用程序中全局添加一个角料的预建主题。
+如果您使用的是角令，可以将其添加到`styles.css`中：
 
 ```css
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 ```
 
-如果您不使用Angular CLI，则可以通过`index.html`中的`<link>`元素包含预构建主题。
+如果您不使用角令，则可以通过`index.html`中的`<link>`元素包含预构建主题。
 
 有关主题的更多信息以及有关如何创建自定义主题的说明, 请参阅[主题指南](./theming.md).
 
-## 第5步：手势支持
+## 第5步:手势支持
 
 一些组件(`mat-slide-toggle`, `mat-slider`, `matTooltip`)依靠[HammerJS](http://hammerjs.github.io/)进行手势。
 为了获得这些组件的完整功能集，必须将HammerJS加载到应用程序中。
@@ -156,9 +156,9 @@ yarn add hammerjs
 import 'hammerjs';
 ```
 
-## 步骤6（可选）：添加材料图标
+## 步骤6(可选):添加材料图标
 
-如果你想在官方[Material Design Icons](https://material.io/icons/)使用`mat-icon`组件, 在你的`index.html`中加载图标字体。
+如果你想在官方[材料设计图标](https://material.io/icons/)使用`mat-icon`组件, 在你的`index.html`中加载图标字体。
 
 ```html
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -192,6 +192,6 @@ System.config({
 });
 ```
 
-## 示例Angular Material项目
+## 示例角料项目
 
-- [material.angular.io](https://material.angular.io) - 我们使用Angular Material构建我们自己的文档！
+- [material.angular.io](https://material.angular.io) - 我们使用角料构建我们自己的文档！

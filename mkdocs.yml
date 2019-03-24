@@ -54,7 +54,7 @@ pages:
   - 概述: index.md
   - 入门: getting-started.md
   - 主题: theming.md
-  - 自定义主题: theming-your-components.md
+  - 主题化组件: theming-your-components.md
   - 排版: typography.md
   - 自定义组件样式: customizing-component-styles.md
   - 自定义表单域控制: creating-a-custom-form-field-control.md
